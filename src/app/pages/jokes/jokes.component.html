@@ -1,0 +1,85 @@
+<div
+    class="container mx-auto px-5 md:px-5 lg:px-10 sm:px-5 h-4/6 flex flex-col justify-center">
+    <div id="logo" class>
+        <img class="h-20 md:h-28 w-auto invert block mx-auto"
+            src="/assets/images/logo.png" alt="TeleJoke">
+    </div>
+
+    <div id="joke" class="text-center py-5">
+        <p id="setup" class="text-xl underline text-text tracking-wider">{{ joke?.setup }}</p>
+
+        <p id="punchline" [ngClass]="status ? 'show' : 'blur-[5px]'" class="text-2xl mt-2 text-accent tracking-wide"><strong>{{ joke?.punchline }}</strong></p>
+
+        <div id="btns" class="flex justify-center gap-y-5 gap-x-5 mt-6 flex-col sm:flex-row">
+            <span id="get_joke" (click)="getJoke()"
+                class="cursor-pointer flex justify-center mx-auto w-fit sm:justify-between sm:mx-0 items-center gap-x-2 bg-bt-secundary px-4 py-3 border-b-4 border-r-4 border-bt-secundary rounded-md text-text font-bold">
+                New Joke
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#f2e5d9"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                </svg>
+            </span>
+            <span id="get_punch" (click)="getPunch()"
+                class="cursor-pointer flex justify-center mx-auto w-fit sm:justify-between sm:mx-0 items-center gap-x-2 bg-bt-primary px-4 py-3 border-b-4 border-r-4 border-[#ab896b] rounded-md text-bg font-bold">
+                Get Punch
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#0f0a05"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                </svg>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="insult_modal" class="relative z-99 hidden" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <div class="fixed inset-0 bg-bt-secundary bg-opacity-75 transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-accent text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-accent px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#000" class="w-6 h-6">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <h3
+                                class="text-base font-semibold leading-6 text-bg"
+                                id="modal-title">Deactivate account</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-bg">Are you sure you want
+                                    to deactivate your account? All of your data
+                                    will be permanently removed. This action
+                                    cannot be undone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <span
+                        class="inline-flex cursor-pointer w-full justify-center rounded-md bg-bt-secundary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

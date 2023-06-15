@@ -1,0 +1,65 @@
+<header>
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global">
+        <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img class="h-10 w-auto invert"
+                    src="/assets/images/logo.png"
+                    alt>
+            </a>
+        </div>
+
+        <div class="flex lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" (click)="openModal()" class="text-sm font-semibold leading-6 text-gray-900">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg>                  
+            </a>
+        </div>
+    </nav>
+</header>
+
+<div id="info_modal" [ngClass]="modal ? 'block' : 'hidden'" class="relative z-[99]" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <div class="fixed inset-0 bg-bt-secundary bg-opacity-75 transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+            class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-accent text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-accent px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="#000" class="w-6 h-6">
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                            <h3
+                                class="text-base font-semibold leading-6 text-bg"
+                                id="modal-title">Deactivate account</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-bg">Are you sure you want
+                                    to deactivate your account? All of your data
+                                    will be permanently removed. This action
+                                    cannot be undone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <span (click)="closeModal()" class="inline-flex cursor-pointer w-full justify-center rounded-md bg-bt-secundary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
