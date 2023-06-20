@@ -4,6 +4,7 @@ import { JokeApiService } from 'src/app/core/services/joke-api.service';
 interface Joke {
   setup: { first: string; last: string; };
   punchline: { large: string; };
+  type: string;
 }
 
 @Component({
@@ -14,6 +15,7 @@ interface Joke {
 export class JokesComponent {
   joke: Joke | null = null;
   status: boolean = false;
+  modal: boolean = false;
   
   constructor(private jokeApiService: JokeApiService){}
 
@@ -41,5 +43,13 @@ export class JokesComponent {
 
   getPunch(){
     this.status = true
+  }
+
+  openModal(){
+    this.modal = true;
+  }
+
+  closeModal(){
+    this.modal = false;
   }
 }
