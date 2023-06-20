@@ -16,6 +16,7 @@ export class JokesComponent {
   joke: Joke | null = null;
   status: boolean = false;
   modal: boolean = false;
+  modalMessage: string = '';
   
   constructor(private jokeApiService: JokeApiService){}
 
@@ -45,8 +46,16 @@ export class JokesComponent {
     this.status = true
   }
 
-  openModal(){
+  openModalInsult(){
     this.modal = true;
+
+    this.modalMessage = "We don't care :)"
+  }
+
+  openModalOk(){
+    this.modal = true;
+
+    this.modalMessage = "Cool!"
   }
 
   closeModal(){
