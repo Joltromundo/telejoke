@@ -43,7 +43,7 @@ Thumbs.db
 
 # Branch ::: dist
 # -------------------------------
-!/dist/*
+!/dist
 /src
 angular.json
 package-lock.json
@@ -53,3 +53,4 @@ tailwind.config.js
 tsconfig.app.json
 tsconfig.json
 tsconfig.spec.json
+.editorconfig
