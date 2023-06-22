@@ -43,7 +43,7 @@ Thumbs.db
 
 # Branch ::: dist
 # -------------------------------
-!/dist
+!/dist/*
 /src
 angular.json
 package-lock.json
