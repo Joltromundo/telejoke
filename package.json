@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prepare": "husky install",
-    "deploy": "ng build --base-href https://gitlab.com/Joltromundo/telejoke.git && angular-cli-ghpages --branch gh-pages"
+    "deploy": "ng build --base-href https://telejoke.myspacegarden.com/ && angular-cli-ghpages --repo https://gitlab.com/Joltromundo/telejoke.git --branch gh-pages"
   },
   "private": true,
   "dependencies": {
