@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/myspaceg/telejoke.myspacegarden/
+    - /bin/cp * $DEPLOYPATH
